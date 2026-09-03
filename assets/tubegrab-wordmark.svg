@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="140" viewBox="0 0 560 140" role="img" aria-labelledby="title desc">
+  <title id="title">TubeGrab</title>
+  <desc id="desc">TubeGrab red download icon and wordmark</desc>
+  <rect x="10" y="10" width="120" height="120" rx="32" fill="#ff0033"/>
+  <path fill="#fff" d="M61 33h18v48l17-17 13 13-39 39-39-39 13-13 17 17V33Zm-25 88h68v9H36v-9Z"/>
+  <style>.wordmark{fill:#0f0f0f}@media(prefers-color-scheme:dark){.wordmark{fill:#f1f1f1}}</style>
+  <text class="wordmark" x="158" y="94" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="700" letter-spacing="-2">TubeGrab</text>
+</svg>

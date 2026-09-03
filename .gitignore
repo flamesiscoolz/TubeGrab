@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Created by install.ps1
+tubegrab.json
+froggrab.json
+extension/config.js
+
+*.part
+.vscode/
+.idea/
+Thumbs.db
