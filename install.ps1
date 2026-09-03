@@ -29,5 +29,5 @@ $Shortcut.Save()
 Start-Process -FilePath $PythonW -ArgumentList ('"{0}"' -f (Join-Path $ProjectDir 'downloader.py')) -WorkingDirectory $ProjectDir -WindowStyle Hidden
 
 Write-Host ''
-Write-Host 'TubeGrab installed. In Edge open edge://extensions, enable Developer mode,'
-Write-Host "click Load unpacked, and select: $ProjectDir\extension"
+Write-Host 'TubeGrab backend installed.'
+Write-Host "Load the browser extension from: $ProjectDir\extension"

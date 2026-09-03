@@ -56,3 +56,44 @@
 }
 .tubegrab-toast.error { background: #b3261e; }
 .tubegrab-toast.show { opacity: 1; transform: translate(-50%, 0); }
+.tubegrab-hint {
+  position: fixed;
+  z-index: 2147483647;
+  width: 150px;
+  height: 65px;
+  color: var(--yt-spec-text-primary, #f1f1f1);
+  font: 500 13px/18px Roboto, Arial, sans-serif;
+  pointer-events: auto;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity .22s ease, transform .22s ease;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,.45));
+}
+.tubegrab-hint.show { opacity: 1; transform: translateY(0); }
+.tubegrab-hint span {
+  display: block;
+  width: max-content;
+  padding: 5px 9px;
+  border-radius: 8px;
+  background: var(--yt-spec-menu-background, #282828);
+}
+.tubegrab-hint svg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 92px;
+  height: 54px;
+  overflow: visible;
+}
+.tubegrab-hint path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tubegrab-hint, .tubegrab-toast { transition: none; }
+  #tubegrab-actions button.loading span { animation: none; }
+}

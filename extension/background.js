@@ -1,5 +1,3 @@
-importScripts("config.js");
-
 async function request(path, options = {}) {
   const response = await fetch(`http://127.0.0.1:${globalThis.TUBEGRAB_CONFIG.port}${path}`, {
     ...options,

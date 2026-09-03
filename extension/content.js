@@ -2,6 +2,35 @@
   const ID = "tubegrab-actions";
   let inserting = false;
 
+  function showHint(group) {
+    if (localStorage.getItem("tubegrab-hint-v1")) return;
+    localStorage.setItem("tubegrab-hint-v1", "seen");
+    const hint = document.createElement("div");
+    hint.className = "tubegrab-hint";
+    hint.innerHTML = `
+      <span>Downloads live here</span>
+      <svg viewBox="0 0 92 54" aria-hidden="true">
+        <path d="M4 8c35 0 62 3 68 27"/>
+        <path d="m61 31 13 8 8-13"/>
+      </svg>`;
+    document.body.append(hint);
+    const position = () => {
+      const rect = group.getBoundingClientRect();
+      hint.style.left = `${Math.max(12, rect.left - 105)}px`;
+      hint.style.top = `${Math.max(70, rect.top - 68)}px`;
+    };
+    position();
+    requestAnimationFrame(() => hint.classList.add("show"));
+    window.addEventListener("resize", position, { passive: true });
+    const remove = () => {
+      window.removeEventListener("resize", position);
+      hint.classList.remove("show");
+      setTimeout(() => hint.remove(), 220);
+    };
+    hint.addEventListener("click", remove);
+    setTimeout(remove, 8000);
+  }
+
   function toast(text, error = false) {
     document.querySelector(".tubegrab-toast")?.remove();
     const node = document.createElement("div");
@@ -59,6 +88,7 @@
       button.addEventListener("click", () => download(button.dataset.kind, button))
     );
     row.insertBefore(group, like);
+    showHint(group);
     inserting = false;
   }
 

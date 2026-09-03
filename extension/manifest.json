@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "TubeGrab",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Adds native MP3 and MP4 download actions to YouTube.",
   "icons": {
     "16": "icons/icon16.png",
@@ -10,7 +10,16 @@
     "128": "icons/icon128.png"
   },
   "host_permissions": ["http://127.0.0.1:17843/*"],
-  "background": { "service_worker": "background.js" },
+  "background": {
+    "scripts": ["config.js", "background.js"],
+    "service_worker": "background-worker.js"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "tubegrab@flamesiscoolz",
+      "strict_min_version": "121.0"
+    }
+  },
   "content_scripts": [{
     "matches": ["https://www.youtube.com/*", "https://music.youtube.com/*"],
     "js": ["content.js"],

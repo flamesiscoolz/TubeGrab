@@ -4,11 +4,18 @@
 
 <p align="center">MP3 and MP4 downloads beside YouTube's Like button.</p>
 
-TubeGrab is a small Edge extension with a local Python helper. The extension adds a native-looking `MP3 | MP4` control to YouTube. The helper handles downloads in the background and keeps a Quit option in the Windows system tray.
+TubeGrab is a browser extension with a local Python helper. It adds a native-looking `MP3 | MP4` control to YouTube. The helper handles downloads in the background and keeps a Quit option in the Windows system tray.
 
 ## Install
 
-You need Windows, Microsoft Edge, and Python 3.10 or newer.
+You need Windows and Python 3.10 or newer. The extension supports current versions of:
+
+- Chrome
+- Edge
+- Brave
+- Opera
+- Vivaldi
+- Firefox 121 or newer
 
 1. Download or clone this repository.
 2. Run:
@@ -17,15 +24,27 @@ You need Windows, Microsoft Edge, and Python 3.10 or newer.
    powershell -ExecutionPolicy Bypass -File .\install.ps1
    ```
 
-3. Open `edge://extensions`.
-4. Turn on **Developer mode**.
-5. Choose **Load unpacked** and select the `extension` folder.
+3. Load the extension using the instructions below.
 
 The installer handles the Python packages, FFmpeg, local connection token, startup shortcut, and background helper.
 
+## Load the extension
+
+For Chromium browsers, open the matching extensions page, enable **Developer mode**, choose **Load unpacked**, and select the `extension` folder:
+
+| Browser | Extensions page |
+| --- | --- |
+| Chrome | `chrome://extensions` |
+| Edge | `edge://extensions` |
+| Brave | `brave://extensions` |
+| Opera | `opera://extensions` |
+| Vivaldi | `vivaldi://extensions` |
+
+For Firefox, open `about:debugging#/runtime/this-firefox`, choose **Load Temporary Add-on**, and select `extension/manifest.json`. A temporary Firefox installation must be loaded again after restarting Firefox. Publishing a signed Firefox package is the permanent-install route.
+
 ## Use
 
-Open a YouTube video and use the buttons beside Like/Dislike:
+Open a YouTube video and use the buttons beside Like/Dislike. The first time TubeGrab appears, a short curved arrow points out the new controls.
 
 - **MP3** downloads the best audio source and converts it to 320 kbps MP3.
 - **MP4** downloads the best available video and audio.
@@ -36,7 +55,7 @@ TubeGrab runs under **Show hidden icons** in the Windows taskbar. Right-click it
 
 ## Update
 
-Pull or replace the project files, run `install.ps1` again, then click **Reload** for TubeGrab on `edge://extensions`.
+Pull or replace the project files, run `install.ps1` again, then reload TubeGrab from your browser's extensions page.
 
 ## Remove
 
@@ -46,6 +65,6 @@ Run:
 powershell -ExecutionPolicy Bypass -File .\uninstall.ps1
 ```
 
-Then remove TubeGrab from `edge://extensions`.
+Then remove TubeGrab from your browser's extensions page.
 
 Only download videos you own or have permission to save.
